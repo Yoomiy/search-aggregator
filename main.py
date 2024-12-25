@@ -1,7 +1,7 @@
 import requests
 from config import GOOGLE_API_KEY, GOOGLE_CSE_ID
 
-def search_google(query, api_key=GOOGLE_API_KEY, cse_id=GOOGLE_CSE_ID, max_results=5):
+def search_google(query, api_key, cse_id, max_results=5):
     """
     Search Google for a given query using the Custom Search API.
 
@@ -80,26 +80,42 @@ def search_wikipedia(query, max_results=5):
 def display_results(results):
     for i, result in enumerate(results, start=1):
         print(f"{i}. {result['title']}")
-        print(f"   {result['snippet']}")
-        print(f"   Link: {result['link']}\n")
+        if 'snippet' in result:
+            print(f"   {result['snippet']}")
+        print(f"   Link: {result['link']}")
+        print(f"   Source: {result['source']}\n")
 
+def duplicate_results(results):
+    seen = set()
+    unique_results = []
+    for result in results:
+        if result['link'] not in seen:
+            seen.add(result['link'])
+            unique_results.append(result)
+    return unique_results
+            
 def main():
     print("Welcome to the CLI Search Aggregator!")
     query = input("Enter your search query: ")
     print("Choose sources: [google, wikipedia] (separate by commas)")
-    sources = input("Sources: ").lower().split(",")
+    sources = [source.strip() for source in input("Sources: ").lower().split(",")]
 
     aggregated_results = []
 
     if "google" in sources:
         google_results = search_google(query, GOOGLE_API_KEY, GOOGLE_CSE_ID)
+        for result in google_results:
+            result["source"] = "google"
         aggregated_results.extend(google_results)
 
     if "wikipedia" in sources:
         wikipedia_results = search_wikipedia(query)
+        for result in wikipedia_results:
+            result["source"] = "wikipedia"
         aggregated_results.extend(wikipedia_results)
 
     if aggregated_results:
+        aggregated_results = duplicate_results(aggregated_results)
         print("\nAggregated Results:")
         display_results(aggregated_results)
     else:

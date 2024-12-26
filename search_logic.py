@@ -33,6 +33,7 @@ def search_google(query, api_key, cse_id, max_results=5):
                 "title": item["title"],
                 "snippet": item["snippet"],
                 "link": item["link"],
+                "source": "google"
             })
 
         return results
@@ -69,7 +70,7 @@ def search_wikipedia(query, max_results=5):
         for item in data["query"]["search"][:max_results]:
             title = item["title"]
             link = f"https://en.wikipedia.org/wiki/{title.replace(' ', '_')}"
-            results.append({"title": title, "link": link})
+            results.append({"title": title, "link": link, "source": "wikipedia"})
 
         return results
 
@@ -94,28 +95,32 @@ def duplicate_results(results):
             unique_results.append(result)
     return unique_results
             
+def logic(query, sources):
+    aggregated_results = []
+
+    if "google" in sources:
+        google_results = search_google(query, GOOGLE_API_KEY, GOOGLE_CSE_ID)
+        aggregated_results.extend(google_results)
+
+    if "wikipedia" in sources:
+        wikipedia_results = search_wikipedia(query)
+        aggregated_results.extend(wikipedia_results)
+
+    if aggregated_results:
+        aggregated_results = duplicate_results(aggregated_results)
+    
+    return aggregated_results
+
+
 def main():
     print("Welcome to the CLI Search Aggregator!")
     query = input("Enter your search query: ")
     print("Choose sources: [google, wikipedia] (separate by commas)")
     sources = [source.strip() for source in input("Sources: ").lower().split(",")]
 
-    aggregated_results = []
-
-    if "google" in sources:
-        google_results = search_google(query, GOOGLE_API_KEY, GOOGLE_CSE_ID)
-        for result in google_results:
-            result["source"] = "google"
-        aggregated_results.extend(google_results)
-
-    if "wikipedia" in sources:
-        wikipedia_results = search_wikipedia(query)
-        for result in wikipedia_results:
-            result["source"] = "wikipedia"
-        aggregated_results.extend(wikipedia_results)
+    aggregated_results = logic(query, sources)
 
     if aggregated_results:
-        aggregated_results = duplicate_results(aggregated_results)
         print("\nAggregated Results:")
         display_results(aggregated_results)
     else:

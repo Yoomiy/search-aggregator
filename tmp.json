@@ -1,0 +1,104 @@
+{
+    "batchcomplete": "",
+    "continue": {
+        "sroffset": 10,
+        "continue": "-||"
+    },
+    "query": {
+        "searchinfo": {
+            "totalhits": 239239
+        },
+        "search": [
+            {
+                "ns": 0,
+                "title": "Israel",
+                "pageid": 9282173,
+                "size": 409800,
+                "wordcount": 38167,
+                "snippet": "<span class=\"searchmatch\">Israel</span>, officially the State of <span class=\"searchmatch\">Israel</span>, is a country in the Southern Levant region of West Asia. It is bordered by Lebanon and Syria to the north, the",
+                "timestamp": "2024-12-23T18:02:02Z"
+            },
+            {
+                "ns": 0,
+                "title": "Israel\u2013Hamas war",
+                "pageid": 74998519,
+                "size": 583702,
+                "wordcount": 56739,
+                "snippet": "The <span class=\"searchmatch\">Israel</span>\u2013Hamas war, also known as the Gaza War, is an ongoing armed conflict between <span class=\"searchmatch\">Israel</span> and Hamas-led Palestinian militant groups. It is the fifth",
+                "timestamp": "2024-12-25T12:30:56Z"
+            },
+            {
+                "ns": 0,
+                "title": "Israeli\u2013Palestinian conflict",
+                "pageid": 46216,
+                "size": 305129,
+                "wordcount": 32576,
+                "snippet": "The <span class=\"searchmatch\">Israeli</span>\u2013Palestinian conflict is an ongoing military and political conflict about land and self-determination within the territory of the former Mandatory",
+                "timestamp": "2024-12-24T17:39:42Z"
+            },
+            {
+                "ns": 0,
+                "title": "Arab\u2013Israeli conflict",
+                "pageid": 7960202,
+                "size": 127632,
+                "wordcount": 11547,
+                "snippet": "Arab\u2013<span class=\"searchmatch\">Israeli</span> conflict is the phenomenon involving political tension, military conflicts, and other disputes between various Arab countries and <span class=\"searchmatch\">Israel</span>, which",
+                "timestamp": "2024-12-23T16:15:57Z"
+            },
+            {
+                "ns": 0,
+                "title": "Israel Defense Forces",
+                "pageid": 39237,
+                "size": 178674,
+                "wordcount": 16286,
+                "snippet": "military of the State of <span class=\"searchmatch\">Israel</span>. It consists of three service branches: the <span class=\"searchmatch\">Israeli</span> Ground Forces, the <span class=\"searchmatch\">Israeli</span> Air Force, and the <span class=\"searchmatch\">Israeli</span> Navy. It is the sole",
+                "timestamp": "2024-12-21T23:47:16Z"
+            },
+            {
+                "ns": 0,
+                "title": "2024 Israeli invasion of Syria",
+                "pageid": 78549398,
+                "size": 71796,
+                "wordcount": 5540,
+                "snippet": "On 8 December 2024, <span class=\"searchmatch\">Israel</span> invaded the buffer zone between Syria and the <span class=\"searchmatch\">Israeli</span>-occupied Golan Heights, and carried out an aerial campaign targeting the",
+                "timestamp": "2024-12-25T11:15:47Z"
+            },
+            {
+                "ns": 0,
+                "title": "Israeli",
+                "pageid": 26385186,
+                "size": 660,
+                "wordcount": 96,
+                "snippet": "State of <span class=\"searchmatch\">Israel</span> Modern Hebrew, a language <span class=\"searchmatch\">Israeli</span> (newspaper), published from 2006 to 2008 Guni <span class=\"searchmatch\">Israeli</span> (born 1984), <span class=\"searchmatch\">Israeli</span> basketball player <span class=\"searchmatch\">Israel</span> (disambiguation)",
+                "timestamp": "2023-10-16T04:01:22Z"
+            },
+            {
+                "ns": 0,
+                "title": "Israel\u2013Hezbollah conflict (2023\u2013present)",
+                "pageid": 75005425,
+                "size": 337835,
+                "wordcount": 31011,
+                "snippet": "<span class=\"searchmatch\">Israel</span> began on 8 October 2023, when Hezbollah launched rockets and artillery at <span class=\"searchmatch\">Israeli</span> positions following the 7 October Hamas-led attack on <span class=\"searchmatch\">Israel</span>",
+                "timestamp": "2024-12-23T12:12:43Z"
+            },
+            {
+                "ns": 0,
+                "title": "Casualties of the Israel\u2013Hamas war",
+                "pageid": 75130785,
+                "size": 192432,
+                "wordcount": 18879,
+                "snippet": "over 46,000 people \u2013 44,786 Palestinian and 1,706 <span class=\"searchmatch\">Israeli</span> \u2013 have been reported killed in the <span class=\"searchmatch\">Israel</span>\u2013Hamas war, as well as 141\u2013156 journalists and media",
+                "timestamp": "2024-12-23T16:05:10Z"
+            },
+            {
+                "ns": 0,
+                "title": "B'nai Israel",
+                "pageid": 15820846,
+                "size": 2702,
+                "wordcount": 291,
+                "snippet": "B'nai <span class=\"searchmatch\">Israel</span> (Hebrew: \u05d1\u05e0\u05d9 \u05d9\u05e9\u05e8\u05d0\u05dc &quot;Sons/Children of <span class=\"searchmatch\">Israel</span>&quot;) may refer to: Bene <span class=\"searchmatch\">Israel</span>, a historic community of Jews in India Bnei Isro'il, a historic community",
+                "timestamp": "2024-10-25T12:10:33Z"
+            }
+        ]
+    }
+}

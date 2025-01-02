@@ -17,10 +17,12 @@
         document.addEventListener("DOMContentLoaded", function () {
             const form = document.getElementById("search-form");
             const resultsDiv = document.getElementById("results");
+            const loadingDiv = document.getElementById("loading");
      
             form.addEventListener("submit", async function (event) {
                 event.preventDefault(); // Prevent the form from submitting normally
                 console.log("Form submitted");
+                loadingDiv.classList.remove("d-none"); // Show spinner
      
                 // Collect form data
                 const formData = new FormData(form);
@@ -38,23 +40,31 @@
                 resultsDiv.innerHTML = ""; // Clear previous results
      
                 if (results.error) {
-                    resultsDiv.innerHTML = `<p class="text-danger">${results.error}</p>`;                    
+                    resultsDiv.innerHTML = `<p class="text-danger">${results.error}</p>`;
+                    loadingDiv.classList.add("d-none"); // Hide spinner                 
                 } else {
                     results.forEach(result => {
-                        const resultDiv = document.createElement("div");
-                        resultDiv.classList.add("mb-3", "p-3", "border", "rounded");
-     
-                        resultDiv.innerHTML = `
-                            <h5>${result.title}</h5>
-                            ${result.snippet ? `<p>${result.snippet}</p>` : ''}
-                            <a href="${result.link}" target="_blank">${result.link}</a>
-                            <p><strong>Source:</strong> ${result.source}</p>
+                        const resultCard = `
+                            <div class="card mb-3">
+                                <div class="card-body">
+                                    <h5 class="card-title">${result.title}</h5>
+                                    ${result.snippet ? `<p class="card-text">${result.snippet}</p>` : ''}
+                                    <a href="${result.link}" class="btn btn-primary" target="_blank">Visit Link</a>
+                                    <p class="mt-2"><small class="text-muted">Source: ${result.source}</small></p>
+                                </div>
+                            </div>
                         `;
-                        resultsDiv.appendChild(resultDiv);
+                        loadingDiv.classList.add("d-none"); // Hide spinner
+                        resultsDiv.innerHTML += resultCard;
                     });
                 }
             });
         });
      </script>     
 </body>
+
+<footer class="mt-5 text-center text-muted">
+    <p>&copy; 2024 Search Aggregator. Built with <a href="https://flask.palletsprojects.com/" target="_blank">Flask</a> and <a href="https://getbootstrap.com/" target="_blank">Bootstrap</a> and <a href="https://chat.com/" target="_blank">ChatGPT</a>.</p>
+</footer>
+
 </html>
